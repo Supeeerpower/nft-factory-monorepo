@@ -1,66 +1,89 @@
-## Foundry
+# Smart Contracts
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This directory contains the smart contracts for the NFT Factory project, built with Solidity and Foundry.
 
-Foundry consists of:
+## 📁 Project Structure
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```
+contracts/
+├── src/           # Source files
+├── test/          # Test files
+├── script/        # Deployment scripts
+└── lib/           # Dependencies
 ```
 
-### Test
+## 🚀 Quick Start
 
-```shell
-$ forge test
+### Prerequisites
+
+- [Foundry](https://book.getfoundry.sh/getting-started/installation)
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Yarn](https://yarnpkg.com/) package manager
+
+### Installation
+
+```bash
+forge install
 ```
 
-### Format
+## 🛠️ Development
 
-```shell
-$ forge fmt
+### Compilation
+
+```bash
+make build
 ```
 
-### Gas Snapshots
+### Testing
 
-```shell
-$ forge snapshot
+Run all tests:
+
+```bash
+make test
 ```
 
-### Anvil
+### Coverage
 
-```shell
-$ anvil
+Generate coverage report:
+
+```bash
+make coverage-html
 ```
 
-### Deploy
+### Deployment
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+Deploy to a sepolia:
+
+```bash
+make deploy-sepolia
 ```
 
-### Cast
+## 📝 Contract Architecture
 
-```shell
-$ cast <subcommand>
-```
+The main contracts in this project are:
 
-### Help
+| Contract             | Description                                    |
+| -------------------- | ---------------------------------------------- |
+| `NFTProxyFactory`    | Factory contract for deploying NFT collections |
+| `NFTImplementation`  | Implementation contract for NFT collections    |
+| `INFTImplementation` | Interface for NFT implementation               |
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## 🔒 Security
+
+This project uses:
+
+- [Slither](https://github.com/crytic/slither) for static analysis
+- [Foundry](https://book.getfoundry.sh/) for testing and deployment
+- [OpenZeppelin](https://www.openzeppelin.com/contracts) contracts for standard implementations
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Environment Variables
+
+PRIVATE_KEY=your_private_key
+
+RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
+SEPOLIA_API_URL=https://api-sepolia.etherscan.io/api
+SEPOLIA_API_KEY=your_etherscan_api_key
