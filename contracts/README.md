@@ -85,5 +85,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 PRIVATE_KEY=your_private_key
 
 RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
+
 SEPOLIA_API_URL=https://api-sepolia.etherscan.io/api
+
 SEPOLIA_API_KEY=your_etherscan_api_key
